@@ -6,7 +6,7 @@ def load_data(filename):
     return pd.read_csv(filename)
 
 def preprocess_data(data):
-    data = data.drop("date", axis=1)
+    data = data.drop("datetime", axis=1)
     X = data.drop("aqi", axis=1)
     return X
 
@@ -29,7 +29,7 @@ def make_prediction(model, scaler, data_path):
 
 model_path = "/Users/kumarrohit/Desktop/AQI - Prediction/models/random_forest_model.pkl"
 scaler_path = "/Users/kumarrohit/Desktop/AQI - Prediction/models/scaler.pkl"
-new_data_path = "/Users/kumarrohit/Desktop/AQI - Prediction/data/processed/new_data.csv"
+new_data_path = "/Users/kumarrohit/Desktop/AQI - Prediction/data/processed/raw_dataframe.csv"
 
 model, scaler = load_model_and_scaler(model_path, scaler_path)
 

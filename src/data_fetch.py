@@ -13,17 +13,6 @@ def fetch_openweather_historical_data(lat, lon, start_date, end_date, api_key):
     else:
         print(f"Error fetching data from OpenWeather API (historical): {response.status_code}")
         return None
-
-# Current AQI data from OpenWeather API
-def fetch_openweather_current_data(lat, lon, api_key):
-    url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={api_key}"
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        print(f"Error fetching data from OpenWeather API (current): {response.status_code}")
-        return None
-
 # Save data to a folder
 def save_data(data, filename):
     if data:
